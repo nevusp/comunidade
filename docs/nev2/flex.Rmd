@@ -1,0 +1,605 @@
+---
+title: "Nev comunidade"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: scroll
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(echarts4r)
+graficos <- readRDS("graficos.rds")
+```
+
+Perfil socio-demográfico
+=============================================
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Sexo
+
+```{r}
+graficos$sexo
+```
+
+### Escolaridade
+
+```{r}
+graficos$escol
+```
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Cor ou raça
+
+```{r}
+graficos$SDraca
+```
+
+### Renda individual
+
+```{r}
+
+graficos$SDrendf_ind
+
+```
+
+
+### Renda familiar
+
+```{r}
+graficos$SDrendf_fam
+
+```
+
+
+Bairro e Confiança interpessoal
+=============================================
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Satisfação com o bairro
+
+```{r}
+graficos$Bcond
+```
+
+### Satisfação com o bairro
+
+```{r}
+graficos$Bmudar
+```
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Percepção de desordem 2015
+
+```{r}
+graficos$Batual[[1]]
+```
+
+### Percepção de desordem 2017
+
+```{r}
+graficos$Batual[[2]]
+```
+
+### Percepção de desordem 2018
+
+```{r}
+graficos$Batual[[3]]
+```
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Existência de crime organizado
+
+```{r}
+graficos$Bcrimeorg
+```
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Capital Social
+
+```{r}
+graficos$CSviz
+```
+
+
+### Alinhamento normativo
+
+```{r}
+graficos$CSviz_lei
+```
+
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Confiança interpessoal 2015
+
+```{r}
+graficos$Cconfiar[[1]]
+```
+
+### Confiança interpessoal 2017
+
+```{r}
+graficos$Cconfiar[[2]]
+```
+
+### Confiança interpessoal 2018
+
+```{r}
+graficos$Cconfiar[[3]]
+```
+
+Medo e vitimização
+=============================================
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Percepção de violência
+
+```{r}
+graficos$Mviolen
+```
+
+
+### Medo
+
+```{r}
+graficos$Msoz_dia
+```
+
+### Medo
+
+```{r}
+graficos$Msoz_noit
+
+```
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Uso da violência 2015
+
+```{r}
+graficos$Mviol[[1]]
+```
+
+
+
+### Uso da violência 2017
+
+```{r}
+graficos$Mviol[[2]]
+```
+
+
+
+### Uso da violência 2018
+
+```{r}
+graficos$Mviol[[3]]
+```
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+
+
+### Vitimização 2017
+
+```{r}
+graficos$Vvidasitu[[1]]
+```
+
+### Vitimização 2018
+
+```{r}
+graficos$Vvidasitu[[2]]
+```
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Violência policial 2015
+
+```{r}
+graficos$Vrecsitu[[1]]
+```
+
+
+
+### Violência policial 2017
+
+```{r}
+graficos$Vrecsitu[[2]]
+```
+
+### Violência policial 2018
+
+```{r}
+graficos$Vrecsitu[[3]]
+```
+
+
+Obediência
+=============================================
+
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Obediência às leis 2015
+
+```{r}
+graficos$Ofreq[[1]]
+```
+
+### Obediência às leis 2017
+
+
+```{r}
+graficos$Ofreq[[2]]
+```
+
+### Obediência às leis 2018
+
+
+```{r}
+graficos$Ofreq[[3]]
+```
+
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Obediência às leis 2017
+
+```{r}
+graficos$Oconcdis[[1]]
+```
+
+### Obediência às leis 2018
+
+
+```{r}
+graficos$Oconcdis[[2]]
+```
+
+
+
+Polícia
+=============================================
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Contato iniciado pela instituição 
+
+```{r}
+graficos$ppara
+```
+
+### Confiança na polícia
+
+```{r}
+graficos$Pconfia
+```
+
+
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Justiça procedimental 2015
+
+
+```{r}
+graficos$Pbairr[[1]]
+```
+
+
+### Justiça procedimental 2017
+
+
+```{r}
+graficos$Pbairr[[2]]
+```
+
+
+### Justiça procedimental 2018
+
+
+```{r}
+graficos$Pbairr[[3]]
+```
+
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Cooperação com a polícia 2015
+
+
+```{r}
+graficos$Pcamin[[1]]
+```
+
+
+### Cooperação com a polícia 2017
+
+
+```{r}
+graficos$Pcamin[[2]]
+```
+
+
+### Cooperação com a polícia 2018
+
+
+```{r}
+graficos$Pcamin[[3]]
+```
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Obediência à polícia 2017
+
+```{r}
+graficos$Pconcor[[1]]
+```
+
+
+### Obediência à polícia 2018
+
+```{r}
+graficos$Pconcor[[2]]
+```
+
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Agressividade policial
+
+```{r}
+graficos$Ppbairr_agress
+```
+
+### Medo da polícia
+
+```{r}
+graficos$Ppbairr_medovc
+```
+
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Confiança intitucional 2017
+
+```{r}
+graficos$Ppesso[[1]]
+```
+
+
+### Confiança intitucional 2018
+
+```{r}
+graficos$Ppesso[[2]]
+```
+
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Eficácia da polícia 2015
+
+```{r}
+graficos$Ptrab[[1]]
+```
+
+
+
+### Eficácia da polícia 2017 
+
+```{r}
+graficos$Ptrab[[2]]
+```
+
+
+
+### Eficácia da polícia 2018 
+
+```{r}
+graficos$Ptrab[[3]]
+```
+
+
+
+Row {.tabset .tabset-fade data-height=700}
+-----------------------------------------------------------------------
+
+### Uso da força 2017
+
+```{r}
+graficos$Popin[[1]]
+```
+
+### Uso da força 2018
+
+```{r}
+graficos$Popin[[2]]
+```
+
+
+
+Justiça
+=============================================
+
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Justiça procedimental 2015
+
+```{r}
+graficos$Jgeral[[1]]
+```
+
+
+
+### Justiça procedimental 2017 
+
+```{r}
+graficos$Jgeral[[2]]
+```
+
+
+
+### Justiça procedimental 2018 
+
+```{r}
+graficos$Jgeral[[3]]
+```
+
+
+Row {.tabset .tabset-fade data-height=400}
+-----------------------------------------------------------------------
+
+### Justiça procedimental 2015
+
+```{r}
+graficos$Jatua[[1]]
+```
+
+
+
+### Justiça procedimental 2017 
+
+```{r}
+graficos$Jatua[[2]]
+```
+
+
+
+### Justiça procedimental 2018 
+
+```{r}
+graficos$Jatua[[3]]
+```
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Confiança na Justiça
+
+```{r}
+graficos$Jconf
+```
+
+### Justiça procedimental
+
+```{r}
+graficos$Jatua_just
+```
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Cooperação com a justiça 2017
+
+```{r}
+graficos$Jbairr[[1]]
+```
+
+
+
+### Cooperação com a justiça 2018
+
+```{r}
+graficos$Jbairr[[2]]
+```
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Obediência à justiça 2017
+
+```{r}
+graficos$Jconc[[1]]
+```
+
+### Obediência à justiça 2018
+
+```{r}
+graficos$Jconc[[2]]
+```
+
+
+
+Autoritarismo e democracia
+=============================================
+
+
+### Autoritarismo
+
+```{r}
+graficos$Copin[[1]]
+```
+
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Confiança política
+
+```{r}
+graficos$CPconc
+```
+
+### Satisfação com a democracia 
+
+```{r}
+graficos$CPdemo
+```
+
+Row {.tabset .tabset-fade data-height=550}
+-----------------------------------------------------------------------
+
+### Autoritarismo 2017
+
+```{r}
+graficos$CPconc_[[1]]
+```
+
+### Autoritarismo 2018
+
+```{r}
+graficos$CPconc_[[2]]
+```
+
+
