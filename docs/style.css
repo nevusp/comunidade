@@ -112,3 +112,36 @@ body {
   max-height: 500px;
   overflow: auto;
 }
+
+.navbar-header {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-header {
+    display: block;
+  }
+
+  .navbar-logo {
+    display: none;
+  }
+}
+
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  width: 100%;
+}
+
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+}
